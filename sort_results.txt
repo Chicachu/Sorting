@@ -1,0 +1,177 @@
+
+Statistics for 100 elements: 
+
+	Bubble Sort: 
+
+		Ascending List: 
+
+			Speed: %tS0.000000000
+			Data Comparisons: 0
+			Loop Comparisons: 99
+			Data Assignments: 2
+			Loop Assignments: 0
+			Other Operations: 99
+				Total Operations: 200
+		Descending List: 
+
+			Speed: 0.006759090
+			Data Comparisons: 4851
+			Loop Comparisons: 9801
+			Data Assignments: 19504
+			Loop Assignments: 0
+			Other Operations: 9801
+				Total Operations: 43957
+		Random List: 
+
+			Speed: 0.012113579
+			Data Comparisons: 2471
+			Loop Comparisons: 9306
+			Data Assignments: 9979
+			Loop Assignments: 0
+			Other Operations: 9306
+				Total Operations: 31062
+	Selection Sort: 
+
+		Ascending List: 
+
+			Speed: 0.003630995
+			Data Comparisons: 1
+			Loop Comparisons: 1
+			Data Assignments: 6
+			Loop Assignments: 0
+			Other Operations: 2
+				Total Operations: 10
+		Descending List: 
+
+			Speed: 0.004338427
+			Data Comparisons: 10001
+			Loop Comparisons: 5151
+			Data Assignments: 10306
+			Loop Assignments: 0
+			Other Operations: 5352
+				Total Operations: 30810
+		Random List: 
+
+			Speed: 0.002826795
+			Data Comparisons: 2175
+			Loop Comparisons: 2811
+			Data Assignments: 5626
+			Loop Assignments: 0
+			Other Operations: 2932
+				Total Operations: 13544
+	Insert Sort with Arrays: 
+
+		Ascending List: 
+
+			Speed: 0.000034456
+			Data Comparisons: 100
+			Loop Comparisons: 101
+			Data Assignments: 0
+			Loop Assignments: 100
+			Other Operations: 0
+				Total Operations: 301
+		Descending List: 
+
+			Speed: 0.000879708
+			Data Comparisons: 398
+			Loop Comparisons: 5152
+			Data Assignments: 10296
+			Loop Assignments: 200
+			Other Operations: 0
+				Total Operations: 16046
+		Random List: 
+
+			Speed: 0.070199968
+			Data Comparisons: 9226
+			Loop Comparisons: 81843
+			Data Assignments: 162842
+			Loop Assignments: 4800
+			Other Operations: 0
+				Total Operations: 258711
+	Insert Sort with Lists: 
+
+		Ascending List: 
+
+			Speed: 0.000040320
+			Data Comparisons: 100
+			Loop Comparisons: 101
+			Data Assignments: 1
+			Loop Assignments: 100
+			Other Operations: 0
+				Total Operations: 302
+		Descending List: 
+
+			Speed: 0.002446321
+			Data Comparisons: 5446
+			Loop Comparisons: 5249
+			Data Assignments: 892
+			Loop Assignments: 5149
+			Other Operations: 0
+				Total Operations: 16736
+		Random List: 
+
+			Speed: 0.013471262
+			Data Comparisons: 7739
+			Loop Comparisons: 7552
+			Data Assignments: 847
+			Loop Assignments: 7457
+			Other Operations: 0
+				Total Operations: 23595
+	Merge Sort: 
+
+		Ascending List: 
+
+			Speed: 0.003058451
+			Data Comparisons: 100
+			Loop Comparisons: 200
+			Data Assignments: 302
+			Loop Assignments: 100
+			Other Operations: 104
+				Total Operations: 806
+		Descending List: 
+
+			Speed: 0.000796136
+			Data Comparisons: 100
+			Loop Comparisons: 200
+			Data Assignments: 302
+			Loop Assignments: 100
+			Other Operations: 104
+				Total Operations: 806
+		Random List: 
+
+			Speed: 0.003547423
+			Data Comparisons: 100
+			Loop Comparisons: 200
+			Data Assignments: 302
+			Loop Assignments: 100
+			Other Operations: 104
+				Total Operations: 806
+	Radix Sort: 
+
+		Ascending List: 
+
+			Speed: 0.030761188
+			Data Comparisons: 286
+			Loop Comparisons: 253
+			Data Assignments: 1234
+			Loop Assignments: 53
+			Other Operations: 821
+				Total Operations: 2647
+		Descending List: 
+
+			Speed: 0.011663462
+			Data Comparisons: 286
+			Loop Comparisons: 253
+			Data Assignments: 1234
+			Loop Assignments: 53
+			Other Operations: 821
+				Total Operations: 2647
+		Random List: 
+
+			Speed: 0.009868857
+			Data Comparisons: 218
+			Loop Comparisons: 185
+			Data Assignments: 826
+			Loop Assignments: 53
+			Other Operations: 549
+				Total Operations: 1831

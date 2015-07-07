@@ -1,0 +1,36 @@
+DoublyLinkedList asc100 = new DoublyLinkedList(); 
+		asc100.populateListAsc(100);
+		DoublyLinkedList asc1000 = new DoublyLinkedList(); 
+		asc100.populateListAsc(1000);
+		DoublyLinkedList asc10000 = new DoublyLinkedList(); 
+		asc100.populateListAsc(10000);
+		DoublyLinkedList asc100000 = new DoublyLinkedList(); 
+		asc100.populateListAsc(100000);
+		
+		DoublyLinkedList desc100 = new DoublyLinkedList(); 
+		asc100.populateListDesc(100);
+		DoublyLinkedList desc1000 = new DoublyLinkedList(); 
+		asc100.populateListDesc(1000);
+		DoublyLinkedList desc10000 = new DoublyLinkedList(); 
+		asc100.populateListDesc(10000);
+		DoublyLinkedList desc100000 = new DoublyLinkedList(); 
+		asc100.populateListDesc(100000);
+		
+		DoublyLinkedList rand100 = new DoublyLinkedList(); 
+		asc100.populateListRandom(100);
+		DoublyLinkedList rand1000 = new DoublyLinkedList(); 
+		asc100.populateListRandom(1000);
+		DoublyLinkedList rand10000 = new DoublyLinkedList(); 
+		asc100.populateListRandom(10000);
+		DoublyLinkedList rand100000 = new DoublyLinkedList(); 
+		asc100.populateListRandom(100000);
+		
+		try {
+			File dataAsc = new File("AscDataAssignments.txt");
+			PrintWriter writer = new PrintWriter(dataAsc);
+			asc100000.bubbleSortStats(); 
+			
+			writer.write("Bubble Sort, " + )
+		} catch (Exception e) {
+			
+		}

@@ -1,0 +1,366 @@
+try {
+			File file = new File("sort_results.txt");
+			PrintWriter writer = new PrintWriter(file);
+			
+			for (int i = 100; i <= 100000; i*=10) {
+				DoublyLinkedList listAsc = new DoublyLinkedList();
+				DoublyLinkedList listDesc = new DoublyLinkedList();
+				DoublyLinkedList listRand = new DoublyLinkedList(); 
+				
+				listAsc.populateListAsc(i);
+				listDesc.populateListDesc(i);
+				listRand.populateListRandom(i);
+				
+				writer.write("\nStatistics for " + i + " elements: \n");
+				// ~*~ BUBBLE SORT 
+				writer.write("\n\tBubble Sort: \n");
+				writer.write("\n\t\tAscending List: \n");
+				listAsc.bubbleSort();
+				String stSeconds = String.format("%.9f", (float)listAsc.timeElapsed / 1000000000.0 / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: %tS" + stSeconds);
+				listAsc.bubbleSortStats();
+				writer.write("\n\t\t\tData Comparisons: " + listAsc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listAsc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listAsc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listAsc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listAsc.otherOps);
+				int totalOps = listAsc.dataAssigns + listAsc.dataCompares + listAsc.loopAssigns
+						+ listAsc.loopCompares + listAsc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tDescending List: \n");
+				listDesc.bubbleSort();
+				// listDesc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listDesc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listDesc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listDesc = new DoublyLinkedList(); 
+				listDesc.populateListDesc(i);
+				listDesc.bubbleSortStats();
+				writer.write("\n\t\t\tData Comparisons: " + listDesc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listDesc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listDesc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listDesc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listDesc.otherOps);
+				totalOps = listDesc.dataAssigns + listDesc.dataCompares + listDesc.loopAssigns
+						+ listDesc.loopCompares + listDesc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tRandom List: \n");
+				listRand.bubbleSort();
+				// listRand.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listRand.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listRand.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listRand = new DoublyLinkedList(); 
+				listRand.populateListRandom(i);
+				listRand.bubbleSortStats();
+				writer.write("\n\t\t\tData Comparisons: " + listRand.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listRand.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listRand.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listRand.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listRand.otherOps);
+				totalOps = listRand.dataAssigns + listRand.dataCompares + listRand.loopAssigns
+						+ listRand.loopCompares + listRand.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				// ~*~ Selection Sort
+				listAsc = new DoublyLinkedList();
+				listDesc = new DoublyLinkedList();
+				listRand = new DoublyLinkedList(); 
+				
+				listAsc.populateListAsc(i);
+				listDesc.populateListDesc(i);
+				listRand.populateListRandom(i);
+				
+				writer.write("\n\tSelection Sort: \n");
+				writer.write("\n\t\tAscending List: \n");
+				listAsc.selectionSort();
+				//listAsc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listAsc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listAsc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listAsc.selectionSortStats();
+				writer.write("\n\t\t\tData Comparisons: " + listAsc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listAsc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listAsc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listAsc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listAsc.otherOps);
+				totalOps = listAsc.dataAssigns + listAsc.dataCompares + listAsc.loopAssigns
+						+ listAsc.loopCompares + listAsc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tDescending List: \n");
+				listDesc.selectionSort();
+				// listDesc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listDesc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listDesc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listDesc = new DoublyLinkedList(); 
+				listDesc.populateListDesc(i);
+				listDesc.selectionSortStats();
+				writer.write("\n\t\t\tData Comparisons: " + listDesc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listDesc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listDesc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listDesc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listDesc.otherOps);
+				totalOps = listDesc.dataAssigns + listDesc.dataCompares + listDesc.loopAssigns
+						+ listDesc.loopCompares + listDesc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tRandom List: \n");
+				listRand.selectionSort();
+				// listRand.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listRand.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listRand.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listRand = new DoublyLinkedList(); 
+				listRand.populateListRandom(i);
+				listRand.selectionSortStats();
+				writer.write("\n\t\t\tData Comparisons: " + listRand.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listRand.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listRand.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listRand.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listRand.otherOps);
+				totalOps = listRand.dataAssigns + listRand.dataCompares + listRand.loopAssigns
+						+ listRand.loopCompares + listRand.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				// ~*~ Insert Sort with Arrays
+				listAsc = new DoublyLinkedList();
+				listDesc = new DoublyLinkedList();
+				listRand = new DoublyLinkedList(); 
+				
+				listAsc.populateListAsc(i);
+				listDesc.populateListDesc(i);
+				listRand.populateListRandom(i);
+				
+				writer.write("\n\tInsert Sort with Arrays: \n");
+				writer.write("\n\t\tAscending List: \n");
+				listAsc.insertSortArray();
+				//listAsc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listAsc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listAsc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listAsc.insertSortArrayStats();
+				writer.write("\n\t\t\tData Comparisons: " + listAsc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listAsc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listAsc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listAsc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listAsc.otherOps);
+				totalOps = listAsc.dataAssigns + listAsc.dataCompares + listAsc.loopAssigns
+						+ listAsc.loopCompares + listAsc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tDescending List: \n");
+				listDesc.insertSortArray();
+				// listDesc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listDesc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listDesc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listDesc = new DoublyLinkedList(); 
+				listDesc.populateListDesc(i);
+				listDesc.insertSortArrayStats();
+				writer.write("\n\t\t\tData Comparisons: " + listDesc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listDesc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listDesc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listDesc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listDesc.otherOps);
+				totalOps = listDesc.dataAssigns + listDesc.dataCompares + listDesc.loopAssigns
+						+ listDesc.loopCompares + listDesc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tRandom List: \n");
+				listRand.insertSortArray();
+				// listRand.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listRand.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listRand.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listRand = new DoublyLinkedList(); 
+				listRand.populateListRandom(i);
+				listRand.insertSortArrayStats();
+				writer.write("\n\t\t\tData Comparisons: " + listRand.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listRand.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listRand.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listRand.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listRand.otherOps);
+				totalOps = listRand.dataAssigns + listRand.dataCompares + listRand.loopAssigns
+						+ listRand.loopCompares + listRand.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				
+				// ~*~ Insert Sort with Lists
+				listAsc = new DoublyLinkedList();
+				listDesc = new DoublyLinkedList();
+				listRand = new DoublyLinkedList(); 
+				
+				listAsc.populateListAsc(i);
+				listDesc.populateListDesc(i);
+				listRand.populateListRandom(i);
+				
+				writer.write("\n\tInsert Sort with Lists: \n");
+				writer.write("\n\t\tAscending List: \n");
+				listAsc.insertSortList();
+				//listAsc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listAsc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listAsc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listAsc.insertSortListStats();
+				writer.write("\n\t\t\tData Comparisons: " + listAsc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listAsc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listAsc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listAsc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listAsc.otherOps);
+				totalOps = listAsc.dataAssigns + listAsc.dataCompares + listAsc.loopAssigns
+						+ listAsc.loopCompares + listAsc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tDescending List: \n");
+				listDesc.insertSortList();
+				// listDesc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listDesc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listDesc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listDesc = new DoublyLinkedList(); 
+				listDesc.populateListDesc(i);
+				listDesc.insertSortListStats();
+				writer.write("\n\t\t\tData Comparisons: " + listDesc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listDesc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listDesc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listDesc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listDesc.otherOps);
+				totalOps = listDesc.dataAssigns + listDesc.dataCompares + listDesc.loopAssigns
+						+ listDesc.loopCompares + listDesc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tRandom List: \n");
+				listRand.insertSortList();
+				// listRand.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listRand.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listRand.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listRand = new DoublyLinkedList(); 
+				listRand.populateListRandom(i);
+				listRand.insertSortListStats();
+				writer.write("\n\t\t\tData Comparisons: " + listRand.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listRand.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listRand.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listRand.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listRand.otherOps);
+				totalOps = listRand.dataAssigns + listRand.dataCompares + listRand.loopAssigns
+						+ listRand.loopCompares + listRand.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				// ~*~ Merge Sort
+				listAsc = new DoublyLinkedList();
+				listDesc = new DoublyLinkedList();
+				listRand = new DoublyLinkedList(); 
+				
+				listAsc.populateListAsc(i);
+				listDesc.populateListDesc(i);
+				listRand.populateListRandom(i);
+				
+				writer.write("\n\tMerge Sort: \n");
+				writer.write("\n\t\tAscending List: \n");
+				listAsc.mergeInit();
+				//listAsc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listAsc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listAsc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listAsc = new DoublyLinkedList(); 
+				listAsc.populateListAsc(i);
+				listAsc.mergeInitStats();
+				writer.write("\n\t\t\tData Comparisons: " + listAsc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listAsc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listAsc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listAsc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listAsc.otherOps);
+				totalOps = listAsc.dataAssigns + listAsc.dataCompares + listAsc.loopAssigns
+						+ listAsc.loopCompares + listAsc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tDescending List: \n");
+				listDesc.mergeInit();
+				// listDesc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listDesc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listDesc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listDesc = new DoublyLinkedList(); 
+				listDesc.populateListDesc(i);
+				listDesc.mergeInitStats();
+				writer.write("\n\t\t\tData Comparisons: " + listDesc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listDesc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listDesc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listDesc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listDesc.otherOps);
+				totalOps = listDesc.dataAssigns + listDesc.dataCompares + listDesc.loopAssigns
+						+ listDesc.loopCompares + listDesc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tRandom List: \n");
+				listRand.mergeInit();
+				// listRand.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listRand.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listRand.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listRand = new DoublyLinkedList(); 
+				listRand.populateListRandom(i);
+				listRand.mergeInitStats();
+				writer.write("\n\t\t\tData Comparisons: " + listRand.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listRand.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listRand.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listRand.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listRand.otherOps);
+				totalOps = listRand.dataAssigns + listRand.dataCompares + listRand.loopAssigns
+						+ listRand.loopCompares + listRand.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				// ~*~ RADIX Sort
+				listAsc = new DoublyLinkedList();
+				listDesc = new DoublyLinkedList();
+				listRand = new DoublyLinkedList(); 
+				
+				listAsc.populateListAsc(i);
+				listDesc.populateListDesc(i);
+				listRand.populateListRandom(i);
+				
+				writer.write("\n\tRadix Sort: \n");
+				writer.write("\n\t\tAscending List: \n");
+				listAsc.radixSort();
+				//listAsc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listAsc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listAsc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listAsc.radixSortStats();
+				writer.write("\n\t\t\tData Comparisons: " + listAsc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listAsc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listAsc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listAsc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listAsc.otherOps);
+				totalOps = listAsc.dataAssigns + listAsc.dataCompares + listAsc.loopAssigns
+						+ listAsc.loopCompares + listAsc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tDescending List: \n");
+				listDesc.radixSort();
+				// listDesc.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listDesc.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listDesc.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listDesc = new DoublyLinkedList(); 
+				listDesc.populateListDesc(i);
+				listDesc.radixSortStats();
+				writer.write("\n\t\t\tData Comparisons: " + listDesc.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listDesc.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listDesc.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listDesc.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listDesc.otherOps);
+				totalOps = listDesc.dataAssigns + listDesc.dataCompares + listDesc.loopAssigns
+						+ listDesc.loopCompares + listDesc.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+				
+				writer.write("\n\t\tRandom List: \n");
+				listRand.radixSort();
+				// listRand.timeElapsed / 1000000000.0 = TimeUnit.SECONDS.convert(listRand.timeElapsed / 1000000000.0, TimeUnit.NANOSECONDS);
+				stSeconds = String.format("%.9f", (float)listRand.timeElapsed / 1000000000.0);
+				writer.write("\n\t\t\tSpeed: " + stSeconds);
+				listRand = new DoublyLinkedList(); 
+				listRand.populateListRandom(i);
+				listRand.radixSortStats();
+				writer.write("\n\t\t\tData Comparisons: " + listRand.dataCompares);
+				writer.write("\n\t\t\tLoop Comparisons: " + listRand.loopCompares);
+				writer.write("\n\t\t\tData Assignments: " + listRand.dataAssigns);
+				writer.write("\n\t\t\tLoop Assignments: " + listRand.loopAssigns);
+				writer.write("\n\t\t\tOther Operations: " + listRand.otherOps);
+				totalOps = listRand.dataAssigns + listRand.dataCompares + listRand.loopAssigns
+						+ listRand.loopCompares + listRand.otherOps;
+				writer.write("\n\t\t\t\tTotal Operations: " + totalOps);
+			}
+				
+			} catch (Exception e) {
+				
+			}
